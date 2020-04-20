@@ -1,5 +1,3 @@
-import DBHelper from "../dbhelper";
-
 export default class FetchingData {
   /**
    * Database URL.
