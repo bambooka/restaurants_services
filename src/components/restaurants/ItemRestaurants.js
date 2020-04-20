@@ -6,12 +6,12 @@ export default class ItemRestaurants extends React.Component {
       <>
         <img
           className="restaurant-img"
-          src="https://media-cdn.tripadvisor.com/media/photo-s/0e/cc/0a/dc/restaurant-chocolat.jpg"
+          src={`./img/${this.props.restaurant.photograph}.jpg`}
           alt="some image"/>
-          <h1>Restaurant Name</h1>
+          <h1>{this.props.restaurant.name}</h1>
         <button className='button_marks_favorite'>&#10084;</button>
-        <p>test neighborhood</p>
-        <p>test address</p>
+        <p>{this.props.restaurant.neighborhood}</p>
+        <p>{this.props.restaurant.address}</p>
         <a href="#">View details</a>
       </>
     )

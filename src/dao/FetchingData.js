@@ -14,7 +14,6 @@ export default class FetchingData {
     let fetchURL = `${this.DATABASE_URL}/restaurants`;
     fetch(fetchURL, {method: 'GET'}).then(response => {
       response.json().then(restaurants => {
-        console.log(restaurants);
         restaurants.forEach(r => {
           r.is_favorite = r.is_favorite === 'true';
         });
@@ -29,9 +28,8 @@ export default class FetchingData {
     // TODO: would it be better to make the DB calls synchronously instead?
     // First try to fetch restaurants from the database
 
-    console.log('db is empty');
     this.fetchRestaurantsFromNetwork((error, restaurants) => {
-      console.log('call function')
+      console.log('fetchinf call function')
       callback(error, restaurants);
     });
   }
