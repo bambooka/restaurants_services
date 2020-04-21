@@ -1,5 +1,4 @@
 import React from 'react';
-// import * as img from '/src/img/';
 
 export default class ItemRestaurants extends React.Component {
   render(){
@@ -7,7 +6,7 @@ export default class ItemRestaurants extends React.Component {
       <>
         <img
           className="restaurant-img"
-          src={`./img/${this.props.restaurant.photograph}.jpg`}
+          src={`../../img/${this.props.restaurant.photograph}.jpg`}
           alt="some image"/>
           <h1>{this.props.restaurant.name}</h1>
         <button className='button_marks_favorite'>&#10084;</button>
