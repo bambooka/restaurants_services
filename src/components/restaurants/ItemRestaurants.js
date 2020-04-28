@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 export default class ItemRestaurants extends React.Component {
   render(){
@@ -12,7 +13,7 @@ export default class ItemRestaurants extends React.Component {
         <button className='button_marks_favorite'>&#10084;</button>
         <p>{this.props.restaurant.neighborhood}</p>
         <p>{this.props.restaurant.address}</p>
-        <a href="#">View details</a>
+        <Link to={{pathname: `${this.props.restaurant.id}`, state: {restaurant: this.props.restaurant}}}>View Details</Link>
       </>
     )
   }
