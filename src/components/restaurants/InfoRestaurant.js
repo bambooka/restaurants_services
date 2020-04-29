@@ -1,6 +1,8 @@
 import React from 'react';
+import ListReviews from "../reviews/ListReviews";
 
 export default class Detail extends React.Component {
+
   render() {
     return (
       <>
@@ -14,6 +16,7 @@ export default class Detail extends React.Component {
             <p id='restaurant-hours'>{this.props.restaurant.name}</p>
           </section> : null
         }
+        <ListReviews reviews={this.props.reviews}/>
         </>
     )
   }

@@ -11,8 +11,18 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurants: this.fetchResto()
+      restaurants: this.fetchResto(),
+      reviews: this.fetchReviews()
     };
+  }
+
+  fetchReviews = () => {
+    setTimeout(() => {
+      FetchingData.fetchReviewsFromNetwork((error, reviews) => {
+        console.log(reviews, 'reviews from fetchreviews');
+        this.setState({reviews: reviews})
+      })
+    }, 500)
   }
 
   fetchResto = () => {
@@ -21,19 +31,19 @@ class App extends React.Component {
         console.log(restaurants, 'restaurants from fetchResto');
         this.setState({restaurants:restaurants})
     })
-    }, 1000)
+    }, 500)
 
   };
 
   render() {
-    console.log(this.state.restaurants)
+    console.log(this.state.restaurants);
     return (
       <BrowserRouter>
         <div className="App">
           <Header />
           <Switch>
             <Route exact={true} path='/' render={() => <Main restaurants={this.state.restaurants}/>} />
-            <Route path='/:id' render={() => <Details restaurants={this.state.restaurants} />} />
+            <Route path='/:id' render={() => <Details reviews={this.state.reviews} restaurants={this.state.restaurants} />} />
           </Switch>
           <Footer />
         </div>

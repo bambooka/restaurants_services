@@ -61,4 +61,16 @@ export default class FetchingData {
       }
     });
   }
+
+  static fetchReviewsFromNetwork(callback) {
+    let fetchReviewURL = `${this.DATABASE_URL}/reviews`;
+    fetch(fetchReviewURL, {method: 'GET'}).then(response => {
+      response.json().then(reviews => {
+        // console.log(reviews);
+        callback(null, reviews);
+      });
+    }).catch(error => {
+      callback(`network request failed. returned ${error}`, null);
+    });
+  }
 }

@@ -5,10 +5,15 @@ import {useParams} from 'react-router-dom'
 export default function Details(props) {
   let {id} = useParams();
   let currentRestaurant = props.restaurants[id];
+  let currentReview = props.reviews.filter((item) => {
+    if(item.restaurant_id == id){
+      return item;
+    }
+  })
 
     return(
       <>
-        <InfoRestaurant restaurant={currentRestaurant}/>
+        <InfoRestaurant reviews={currentReview} restaurant={currentRestaurant}/>
       </>
     )
 
