@@ -462,3 +462,92 @@ footer {
   content: 'pending';
   color: red;
 }
+
+li, ul {
+  font-family: 'Encode Sans',sans-serif;
+  font-size: 14pt;
+  color: #333;
+  font-weight: 400;
+}
+
+#reviews-list li {
+  background-color: #fff;
+  border: 2px solid #f3f3f3;
+  display: block;
+  list-style-type: none;
+  margin: 0 0 30px;
+  overflow: hidden;
+  padding: 0 20px 20px;
+  position: relative;
+}
+
+#reviews-list li p:first-child {
+  left: 0;
+  font-size: large;
+  color: #fff;
+}
+
+#reviews-list li p:nth-child(2) {
+  right: 0;
+  text-align: right;
+  color: #c1c1c1;
+}
+
+#reviews-list li p:nth-child(3) {
+  border-radius: 3px;
+  position: absolute;
+  top: 65px;
+  width: auto;
+  background-color: #7e4f00;
+  color: #fff;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+#reviews-list li {
+  background-color: #fff;
+  border: 2px solid #f3f3f3;
+  display: block;
+  list-style-type: none;
+  margin: 0 0 30px;
+  overflow: hidden;
+  padding: 0 20px 20px;
+  position: relative;
+}
+#reviews-list li p:first-child, #reviews-list li p:nth-child(2) {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #333;
+  padding: 0 20px;
+}
+
+#restaurant-img, #reviews-list li {
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 25px;
+}
+
+#reviews-list li {
+  overflow: hidden;
+  padding: 105px 20px 20px;
+}
+
+#reviews-list li p {
+  margin: 0 0 10px;
+}
+
+#reviews-list li p:last-child {
+  font-size: 11pt;
+  color: #696969;
+}
+
+#restaurant-container, #reviews-container {
+  border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid #fff;
+  box-sizing: border-box;
+  padding: 0 20px;
+}

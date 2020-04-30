@@ -10,7 +10,7 @@ export default function ListReviews(props) {
       <section id="reviews-container">
         <ul aria-label="restaurants reviews" id="reviews-list">
           {props.reviews.map((item) => {
-            return <ItemReviews/>
+            return <ItemReviews reviews={item}/>
           })}
         </ul>
       </section>
