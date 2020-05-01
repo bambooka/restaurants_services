@@ -208,3 +208,11 @@ window.self.addEventListener('activate', function (event) {
   );
 });
 
+// Extract from cache
+window.self.addEventListener('fetch', event => {
+  event.respondWith(
+    fetch(event.request).catch(() => {
+      return caches.match(event.request);
+    })
+  );
+});
