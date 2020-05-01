@@ -192,3 +192,19 @@ window.self.addEventListener('install', function (event) {
   );
 });
 
+// Activate
+window.self.addEventListener('activate', function (event) {
+  event.waitUntil(
+    caches.keys().then(function (cacheNames) {
+      return Promise.all(
+        cacheNames.filter(function (cacheName) {
+          return cacheName.startsWith('cache') &&
+            cacheName != CACHE;
+        }).map(function (cacheName) {
+          return caches.delete(cacheName);
+        })
+      );
+    })
+  );
+});
+
